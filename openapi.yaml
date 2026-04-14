@@ -1,0 +1,17 @@
+
+openapi: 3.0.0
+info:
+  title: People Helping People API
+  version: 1.0.0
+paths:
+  /requests:
+    post:
+      summary: Create help request
+    get:
+      summary: List help requests
+  /offers:
+    post:
+      summary: Create offer
+  /messages:
+    post:
+      summary: Send message
