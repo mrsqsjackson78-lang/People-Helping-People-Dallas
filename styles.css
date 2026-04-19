@@ -1,0 +1,46 @@
+.donation-wrap {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.gift-btn {
+  border: none;
+  border-radius: 18px;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ribbon {
+  display: inline-block;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.impact {
+  font-size: 14px;
+  color: #555;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  margin: 10% auto;
+  width: 320px;
+  border-radius: 12px;
+}
+
+.scripture {
+  font-size: 12px;
+  margin-top: 10px;
+}
