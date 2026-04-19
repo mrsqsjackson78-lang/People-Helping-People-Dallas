@@ -1,0 +1,10 @@
+{
+  "name": "donation-gift-button",
+  "version": "1.0.0",
+  "description": "Optional donation gift button with modal, animations, and consent-based analytics",
+  "main": "DonationGiftButton.jsx",
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "license": "MIT"
+}
