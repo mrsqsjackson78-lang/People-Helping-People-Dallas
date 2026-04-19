@@ -1,0 +1,12 @@
+<DonationGiftButton
+  payments={{
+    stripe: "https://checkout.stripe.com/pay/YOUR_LINK",
+    paypal: "https://www.paypal.com/donate",
+    cashapp: "https://cash.app/$YOURCASHTAG"
+  }}
+  analytics={{
+    enabled: true,
+    onEvent: (e) => console.log(e)
+  }}
+/>
+``
