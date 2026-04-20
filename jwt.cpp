@@ -1,7 +1,5 @@
 
-#include <bcrypt/BCrypt.hpp>
-#include <jwt-cpp/jwt.h>
-
-std::string hashPassword(const std::string& pw) {
-    return BCrypt::generateHash(pw);
+#include <string>
+std::string generateToken(int userId) {
+    return "jwt-token-placeholder";
 }

@@ -1,0 +1,9 @@
+
+syntax = "proto3";
+
+service HelpService {
+  rpc HealthCheck (Empty) returns (Status);
+}
+
+message Empty {}
+message Status { string message = 1; }
