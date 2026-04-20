@@ -1,4 +1,2 @@
 
-bool isFlagged(const std::string& text) {
-    return text.find("spam") != std::string::npos;
-}
+int flagUser(int id){ return 1; }
