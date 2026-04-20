@@ -1,25 +1,22 @@
 
-# People Helping People (C++ / SQLite)
+# People Helping People – Full Stack C++
 
-This repository contains a minimal full-stack backend foundation for the **People Helping People** app.
+## Backend
+- Crow (lightweight HTTP)
+- Drogon (high-performance REST)
+- gRPC (future services)
+- SQLite database
+- JWT authentication
+- Moderation safeguards
 
-## Features
-- C++ backend core
-- SQLite embedded database
-- User, Help Request, Help Offer models
-- Safe relational structure
+## Frontend
+- Qt (native)
+- Web (API-driven)
 
-## Build Instructions
+## Build Order
+1. SQLite
+2. Backend APIs
+3. Trust & Safety
+4. Frontend
 
-```bash
-g++ src/main.cpp -lsqlite3 -o php_backend
-./php_backend
-```
-
-## Next Steps
-- Add REST API (Crow / Drogon)
-- Add authentication
-- Add frontend (Web or Mobile)
-
-## Mission
-Empowering individuals to help each other with dignity and trust.
+Mission-first, safety-first architecture.
