@@ -1,14 +1,23 @@
 
-# CI-Safe Package Setup
+# People Helping People Texas – Verification Backend
 
-This ZIP contains a production-ready `package.json` configured for:
+## Stack
+- C++ (Crow REST API)
+- SQLite (default, PostgreSQL-ready)
+- JWT Admin Authentication
+- Image Integrity + Optional Facial Match
+- SMS/Email Verification (placeholder logic)
+- Docker + GitHub Actions CI
 
-- Deterministic CI installs
-- GitHub Actions compatibility
-- Node.js 18+
+## Mobile Platforms
+- iOS
+- Android
+- Web
 
-## Next steps
+## Hosting Targets
+- AWS
+- Azure
+- VPS
 
-npm install
-
-Commit the generated package-lock.json and use npm ci in CI.
+## Legal & Privacy
+See PRIVACY_POLICY.md
