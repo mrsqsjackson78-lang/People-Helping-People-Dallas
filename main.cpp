@@ -1,15 +1,28 @@
 
-// Simplified Crow API with SQLite & JWT placeholders
-#include <crow.h>
-#include <sqlite3.h>
 #include <iostream>
+#include <sqlite3.h>
+
+void init_db(sqlite3* db) {
+    const char* sql = "PRAGMA foreign_keys = ON;";
+    char* errMsg = nullptr;
+    if (sqlite3_exec(db, sql, nullptr, nullptr, &errMsg) != SQLITE_OK) {
+        std::cerr << "DB Init error: " << errMsg << std::endl;
+        sqlite3_free(errMsg);
+    }
+}
 
 int main() {
-  crow::SimpleApp app;
+    sqlite3* db;
+    if (sqlite3_open("people_helping_people.db", &db)) {
+        std::cerr << "Cannot open database" << std::endl;
+        return 1;
+    }
 
-  CROW_ROUTE(app, "/api/health")([]{
-    return "OK";
-  });
+    init_db(db);
 
-  app.port(18080).run();
+    std::cout << "People Helping People backend started." << std::endl;
+    std::cout << "SQLite DB connected successfully." << std::endl;
+
+    sqlite3_close(db);
+    return 0;
 }
