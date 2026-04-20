@@ -1,10 +1,7 @@
 
 FROM ubuntu:22.04
-
-RUN apt-get update && apt-get install -y     build-essential     cmake     libssl-dev     libsqlite3-dev
-
+RUN apt-get update && apt-get install -y g++
+COPY . /app
 WORKDIR /app
-COPY . .
-RUN g++ main.cpp -o server
-EXPOSE 18080
-CMD ["./server"]
+g++ backend/api/crud.cpp -o api
+CMD ["./api"]
