@@ -1,68 +1,71 @@
 
-# People Helping People Texas – System Architecture
+# People Helping People Texas — System Architecture
 
-## Overview
-This document describes the architecture, data model, and safety controls used in the People Helping People Texas application. It is designed for **app store review**, **academic evaluation**, and **security audits**.
-
----
-
-## System Architecture
-
-![System Architecture](system_architecture.svg)
-
-**Description**
-- Mobile clients (iOS, Android, Web) communicate with a C++ REST API (Crow) over HTTPS
-- The API handles verification, abuse detection, and notifications
-- Sensitive data is stored in SQLite/PostgreSQL with encrypted storage
-- ID images are stored separately and deleted after the retention period
+## Purpose (For App Store Reviewers)
+This document explains how the People Helping People Texas app protects users, prevents fraud, and complies with App Store and Google Play policies. Identity verification is **manual, consent-based, and privacy-minimized**.
 
 ---
 
-## Verification Workflow
+## High-Level Architecture
 
-![Verification Flow](verification_flow.svg)
+![System Architecture](system.png)
 
-**Safety Design Notes (App Store Relevant)**
-- Identity verification is **human‑reviewed**, not automated
-- Users must explicitly consent before uploading ID
-- Verification images are never shared with helpers
-
----
-
-## Admin Dashboard
-
-![Admin Dashboard](admin_dashboard.svg)
-
-Admins:
-- Authenticate using JWT
-- Review pending verifications
-- Approve or reject requests
-- Cannot export or reuse ID images
+**Reviewer Notes:**
+- All data is transmitted over HTTPS
+- Backend uses JWT authentication
+- Sensitive data is encrypted before storage
 
 ---
 
-## Database ERD
+## Authentication & Notifications
 
-![ERD](database_erd.svg)
+![JWT & Notifications](auth_notifications.png)
 
-### Data Retention & Encryption
-- ID images: encrypted at rest, deleted after 30–90 days
-- Personal data: stored minimally, never sold or shared
-- Verification result retained as a boolean flag only
-
-This approach complies with the Texas Data Privacy and Security Act (TDPSA).
+- JWT tokens authenticate admins only
+- Users authenticate via SMS/email OTP
+- Notifications are transactional only (no marketing)
 
 ---
 
-## Abuse Detection
+## Verification & Safety Workflow
 
-Text content is scanned server‑side for threats or harassment before publication.
-Flagged content is escalated for manual review.
+![Verification Flow](verification.png)
+
+**Policy Alignment:**
+- Human review (no automated identity decisions)
+- Explicit consent required
+- Rejection includes explanation & retry option
 
 ---
 
-## App Store / Play Store Compliance Notes
-- Sensitive data usage is clearly disclosed
-- Manual review prevents automated decision‑making
-- Users can request data deletion at any time
-- Privacy Policy required before launch
+## Database & Data Protection (ERD)
+
+![Database ERD](erd.png)
+
+### Data Retention
+- ID images: deleted after 30–90 days
+- Verification result: retained as boolean only
+- Encryption at rest using OpenSSL
+
+---
+
+## Abuse Prevention
+- Content scanned for threats
+- Flagged items reviewed by admins
+
+---
+
+## CI/CD & Deployment
+
+- GitHub Actions builds Docker image
+- Immutable deployments
+- Secrets stored via environment variables
+
+---
+
+## Compliance Summary
+✅ User consent
+✅ Data minimization
+✅ Manual review
+✅ Deletion on request
+✅ Store policy alignment
