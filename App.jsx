@@ -1,2 +1,4 @@
 
-export default function App(){return <h1>People Helping People</h1>}
+export default function App() {
+  return <h1>People Helping People</h1>;
+}
