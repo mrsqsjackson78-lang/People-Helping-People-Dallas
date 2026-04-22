@@ -1,9 +1,14 @@
-# People Helping People Texas – Next.js i18n
+# People Helping People Texas – Automated i18n
 
-Drop this folder into your Next.js 13+ App Router project.
+This bundle enables fully automated UI translations using gettext-llm and GPT-4.
 
-Wrap your `layout.tsx` with `LanguageProvider` and use `useLanguage()` anywhere.
+Features:
+✅ LLM-powered translations
+✅ Compassionate, community-safe tone
+✅ SQLite-backed localization
+✅ CI/CD automation
 
-✅ No hard-coded text
-✅ English / Spanish toggle
-✅ Persistent user preference
+Setup:
+1. Add OPENAI_API_KEY to GitHub Secrets
+2. Commit this bundle
+3. Write UI text as translation keys only
