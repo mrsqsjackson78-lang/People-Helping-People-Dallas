@@ -1,0 +1,19 @@
+llm:
+  provider: openai
+  model: gpt-4o
+  temperature: 0.2
+
+style:
+  tone: compassionate, respectful, community-focused
+  register: friendly-professional
+  reading_level: grade-7
+  avoid:
+    - slang
+    - sarcasm
+    - emojis
+    - technical jargon
+
+domain_context: |
+  People Helping People Texas is a community mutual-aid platform.
+  Language should feel supportive, inclusive, and empowering.
+  Messages may be read during stressful situations.
