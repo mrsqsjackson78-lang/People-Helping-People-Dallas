@@ -1,18 +1,1 @@
-{
-  "name": "people-helping-people-dallas",
-  "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
-  },
-  "packageManager": "npm@9",
-  "scripts": {
-    "start": "node index.js",
-    "build": "echo 'No build step defined'",
-    "test": "echo 'No tests specified'",
-    "lint": "echo 'No lint step'",
-    "ci": "npm ci --no-audit --no-fund"
-  },
-  "dependencies": {}
-}
+{"name":"backend","dependencies":{"express":"^4.18.2","cors":"^2.8.5","mongoose":"^7.0.0","openai":"^4.0.0"}}
